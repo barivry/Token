@@ -1,0 +1,27 @@
+dependencies:
+  # - <organization/repo>@<version>
+  - OpenZeppelin/openzeppelin-contracts@4.4.1
+# remaping @chainlink to be equal to smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    remappings:
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.4.1'
+dotenv: .env
+networks:
+  default: development
+  verify:
+    mainnet-fork-dev_verify: False
+    mainnet-fork_verify: False
+    rinkeby_verify: True
+    kovan_verify: True
+    development_verify: False
+    ganache-local_verify: False
+wallets:
+    from_key: ${PRIVATE_KEY}
+accounts:
+  OWNER_ADDRESS: ${OWNER_ADDRESS}
+  MARKET_ADDRESS: ${MARKET_ADDRESS}
+  DEV_ADDRESS: ${DEV_ADDRESS}
+  UNISWAP_V2_ROUTER_ADDRESS: ${UNISWAP_V2_ROUTER_ADDRESS}
+  CHARITY_ADDRESS: ${CHARITY_ADDRESS}
+  LIQUIDITY_ADDRESS: ${LIQUIDITY_ADDRESS}
